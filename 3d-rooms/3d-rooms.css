@@ -126,8 +126,8 @@ p {
 
 #main-image {
     display: inline-block;
-    width: 95%;
-    height: auto;
+    max-width: 95%;
+    max-height: 50vh;
     margin-top: 4%;
 
     border: solid;
@@ -143,8 +143,8 @@ p {
     position: absolute;
     display: block;
     height: 600px;
-    width: 80%;
-    left: 10%;
+    width: 120%;
+    left: -10%;
     top: 52%;
 
     text-align: center;
@@ -269,7 +269,7 @@ p {
 }
 
 /*tablet*/
-@media (max-aspect-ratio: 4/3) {
+@media (max-aspect-ratio: 5/4) {
     #content { overflow: initial; }
 
     #main-column {
