@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Neucha");
+
+/*fade-in animation*/
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes slide-in {
+    0% {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    100% {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        margin-top: 20px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+/*main content*/
+#content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+
+    animation: fade-in 0.8s;
+    overflow: hidden;
+}
+
+#main-column {
+    z-index: 1;
+    position: absolute;
+    width: 22%;
+    right: 62%;
+    margin: auto;
+    padding-top: 40px;
+
+    text-align: center;
+
+    animation: slide-in 0.8s;
+}
+
+#avatar {
+    display: inline-block;
+    height: auto;
+    width: 45%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#title {
+    margin-top: -10px;
+    margin-bottom: -18px;
+
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 94, 161);
+    font-size: 55px;
+    font-family: "Passion One";
+    line-height: 50px;
+}
+
+#title:lang(ru){
+    margin-top: -10px;
+    margin-bottom: -13px;
+
+    font-size: 30px;
+    font-family: "Open Sans";
+    font-style: bold;
+    font-weight: 800;
+    line-height: 28px;
+}
+
+#description {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-align: left;
+    font-size: 24px;
+    font-family: "Open Sans";
+    font-weight: 700;
+    color: white;
+
+    background-color: rgba(255,255,255,0.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgba(255,255,255,0.6);
+}
+
+p {
+    margin: 3px;
+    padding: 0px;
+}
+
+/*side column*/
+#right-column {
+    display: initial;
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    left: 40%;
+    padding-top: 40px;
+
+    animation: slide-in 0.8s;
+}
+
+#main-image {
+    display: inline-block;
+    width: 95%;
+    height: auto;
+    margin-top: 4%;
+
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    box-shadow: 0px 0px 10px var(--shadow-color);
+
+    cursor: pointer;
+}
+
+/*lower area*/
+#additional-content {
+    position: absolute;
+    display: block;
+    height: 600px;
+    width: 80%;
+    left: 10%;
+    top: 52%;
+
+    text-align: center;
+
+    animation: slide-up 0.8s;
+}
+
+.photo-area {
+    display: inline-block;
+    width: 350px;
+    height: 400px;
+    margin: 0px;
+
+    background-color: white;
+    box-shadow: 0px 0px 10px var(--shadow-color);
+}
+
+.rot5 { transform: rotateZ(5deg) translateY(20px); }
+.rot-2 { transform: rotateZ(-2deg); }
+.rot1 { transform: rotateZ(1deg) translateY(10px);}
+.rot-6 { transform: rotateZ(-6deg) translateY(9px);}
+
+#photo1, #photo2, #photo3, #photo4 {
+    display: block;
+    position: absolute;
+    height: 300px;
+    width: 330px;
+    left: 10px;
+    top: 10px;
+    background-color: black;
+
+    cursor: pointer;
+}
+
+#photo1 { 
+    background-image: url("/3d-rooms/2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#photo2 { 
+    background-image: url("/3d-rooms/3.png");
+    background-size: cover;
+}
+
+#photo3 {
+    background-image: url("/3d-rooms/4.png");
+    background-size: cover;
+    background-position: center;
+}
+#photo4 {
+    background-image: url("/3d-rooms/5.png");
+    background-size: 130%;
+    background-position: center 20%;
+}
+
+.photo-desc {
+    display: block;
+    position: absolute;
+    height: 70px;
+    width: 330px;
+    left: 10px;
+    bottom: 10px;
+
+    text-align: center;
+    font-family: "Neucha";
+    font-size: 40px;
+    line-height: 70px;
+    color: #202020;
+}
+
+/*gallery*/
+#gallery {
+    z-index: 5;
+    position: fixed;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    text-align: center;
+    opacity: 0;
+
+    background-color: #000000C0;
+}
+
+#close-button {
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 30px;
+    right: 40px;
+    margin: auto;
+
+    background: none;
+    background-image: url("/close-icon.png");
+    background-size: 50px 50px;
+    border: none;
+
+    cursor: pointer;
+}
+
+#gallery-image {
+    display: block;
+    position: absolute;
+    max-height: 95%;
+    max-width: 95%;
+    margin: auto;
+    top: 40px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    box-shadow: 0px 0px 10px black;
+}
+
+/*tablet*/
+@media (max-aspect-ratio: 1/1) {
+    #content { overflow: initial; }
+
+    #main-column {
+        position: relative;
+        display: block;
+        width: 90%;
+        left: 5%;
+        right: initial;
+        margin: 0;
+
+        animation: slide-up 0.8s;
+    }
+
+    #avatar {
+        width: 80%;
+    }
+
+    #description {
+        font-size: 25px;
+    }
+
+    #right-column {
+        position: relative;
+        display: block;
+
+        width: 98%;
+        height: auto;
+        left: 1%;
+        right: 1%;
+        padding-top: 0px;
+        margin-top: 20px; 
+        margin-bottom: 10px; 
+        text-align: center;
+
+        animation: none;
+    }
+
+    #main-image { border-width: 2px};
+
+    .rot-2 { transform: rotateZ(-2deg) translateY(70); }
+
+    #additional-content {
+        height: auto;
+        width: 100%;
+        left: 0%;
+        right: 0%;
+        position: relative;
+        margin-top: -50vh;
+        padding-bottom: 60px;
+
+        animation: none;
+    }
+}
+
+/*mobile*/
+@media (max-aspect-ratio: 10/16) {
+    #main-column {
+        left: 5%;
+        width: 90%;
+    }
+
+    #avatar {
+        width: 80%;
+    }
+
+    #title {
+        margin-bottom: -10px;
+
+        font-size: 40px;
+        line-height: 35px;
+    }
+
+    #title:lang(ru) {
+        margin-bottom: -12px;
+        
+        font-size: 30px;
+        line-height: 28px;
+    }
+
+    #description {
+        font-size: 20px;
+    }
+
+    #gallery-image {
+        border-width: 2px;
+        box-shadow: 0px 0px 5px;
+    }
+
+    #close-button {
+        height: 35px;
+        width: 35px;
+        top: 20px;
+        right: 20px;
+
+        background-size: 35px;
+    }
+}
+
+/*ultra skinny mobile*/
+@media (max-width: 300px) {
+    #additional-content {
+        margin-top: -180px;
+        transform: scale(0.8) translateX(-30px);
+    }
+}

@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+/*fade-in animation*/
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes slide-in {
+    0% {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    100% {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        margin-top: 20px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+/*main content*/
+#content {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+
+    animation: fade-in 0.8s;
+}
+
+#main-column {
+    z-index: 1;
+    position: absolute;
+    width: 22%;
+    right: 55%;
+    margin: auto;
+    padding-top: 60px;
+
+    text-align: center;
+
+    animation: slide-in 0.8s;
+}
+
+#avatar {
+    display: inline-block;
+    height: auto;
+    width: 45%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#title {
+    margin-top: -10px;
+    margin-bottom: -18px;
+
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 94, 161);
+    font-size: 55px;
+    font-family: "Passion One";
+    line-height: 50px;
+}
+
+#title:lang(ru){
+    margin-top: -10px;
+    margin-bottom: -13px;
+
+    font-size: 40px;
+    font-family: "Open Sans";
+    font-style: bold;
+    font-weight: 800;
+    line-height: 38px;
+}
+
+#description {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-align: left;
+    font-size: 24px;
+    font-family: "Open Sans";
+    font-weight: 700;
+    color: white;
+
+    background-color: rgba(255,255,255,0.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgba(255,255,255,0.6);
+}
+
+.footnote {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.footnote a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+p {
+    margin: 3px;
+    padding: 0px;
+}
+
+/*side columns*/
+#right-column {
+    display: initial;
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left: 43%;
+    padding-top: 40px;
+
+    animation: slide-in 0.8s;
+}
+
+#style-a, #style-b {
+    position: absolute;
+    display: inline-block;
+    width: 60%;
+    padding: 0;
+    text-align: center;
+}
+
+#style-a {
+    left: 0;
+}
+
+#style-b {
+    left: 45%;
+}
+
+.live2d {
+    display: inline-block;
+    max-height: 93vh;
+    max-width: 100%;
+}
+
+.price-area {
+    z-index: 1;
+    position: absolute;
+    width: 50%;
+    left:25%;
+    bottom: 28%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+
+    background-color: rgba(255,255,255,0.4);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgba(255,255,255,0.6);
+}
+
+.price-header {
+    margin: 0;
+
+    font-family: "Open Sans";
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 30px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.price {
+    font-family: "Open Sans";
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 75px;
+    color: rgb(255, 94, 161);
+}
+
+/*tablet*/
+@media (max-aspect-ratio: 1/1) {
+
+    #main-column {
+        position: relative;
+        display: block;
+        width: 90%;
+        left: 5%;
+        right: initial;
+        margin: 0;
+
+        animation: slide-up 0.8s;
+    }
+
+    #avatar {
+        width: 80%;
+    }
+
+    #description {
+        font-size: 25px;
+    }
+
+    #right-column {
+        position: relative;
+        display: block;
+
+        width: 100%;
+        left: 0%;
+        right: initial;
+        padding-top: 0px;
+        margin-top: 20px; 
+        margin-bottom: 50px;
+        text-align: center;
+
+        animation: none;
+    }
+
+    #style-a, #style-b {
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+
+    .price-area {
+        width: 60%;
+        left: 19%
+    }
+
+    .live2d {
+        max-height: 120vh;
+    }
+}
+
+/*mobile*/
+@media (max-aspect-ratio: 10/16) {
+    #main-column {
+        left: 5%;
+        width: 90%;
+    }
+
+    #avatar {
+        width: 80%;
+    }
+
+    #title {
+        margin-bottom: -10px;
+
+        font-size: 40px;
+        line-height: 35px;
+    }
+
+    #title:lang(ru) {
+        margin-bottom: -12px;
+        
+        font-size: 30px;
+        line-height: 28px;
+    }
+
+    #description {
+        font-size: 20px;
+    }
+
+    .price-area {
+        width: 80%;
+        left: 9%
+    }
+
+    .live2d {
+        max-height: 150vh;
+    }
+}

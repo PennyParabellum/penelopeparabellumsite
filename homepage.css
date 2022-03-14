@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css?family=Passion One");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+/*variables*/
+:root {
+    --shadow-color: #b9498070;
+}
+
+/*background*/
+html, body { 
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #fb8dc3;
+    background-image: url("Gun Pattern.png");
+    background-repeat: repeat;
+    background-size: 900px 900px;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+
+    animation: scrollbg-x 35s infinite linear, scrollbg-y 65s infinite linear;
+}
+
+#vignette {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 17em 13em rgba(255, 217, 226, 0.4);
+}
+
+#page-dim {
+    display: none;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 13, 17, 0.6);
+    opacity: 0;
+}
+
+/*animation for scrolling gun background*/
+@keyframes scrollbg-x {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 900px;
+    }
+}
+@keyframes scrollbg-y {
+    0% {
+        background-position-y: 0%;
+    }
+    100% {
+        background-position-y: 900px;
+    }
+}
+
+/*fade-in animation for sidebar / art*/
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    100% {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+/*text outlines*/
+.text-outline {
+    /* outline hack */
+    text-shadow:
+   		-2px -2px  1px var(--shadow-color),
+ 		 0   -2px  1px var(--shadow-color),
+   		 2px -2px  1px var(--shadow-color),
+  		 2px  0    1px var(--shadow-color),
+   		 2px  2px  1px var(--shadow-color),
+  		 0    2px  1px var(--shadow-color),
+  		-2px  2px  1px var(--shadow-color),
+   		-2px  0    1px var(--shadow-color);
+}
+
+/*navigation menu*/
+#menu-button {
+    display: none; /* to hide on homepage */
+    z-index: 3;
+    position: fixed;
+    left: 15px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    padding: none;
+
+    background: none;
+    background-image: url("/menu-icon.png");
+    background-size: 50px 50px;
+    border: none;
+
+    cursor: pointer;
+}
+
+#nav-menu {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    height: 240px;
+    width: 300px;
+    top: 20px;
+    left: -100px;
+    padding: 5px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+#menu-socials {
+    height: 35px;
+    text-align: center;
+    word-spacing: 7px;
+}
+
+#menu-socials img {
+    max-height: 30px;
+    max-width: 30px;
+    height: auto;
+    width: auto;
+    vertical-align: middle;
+}
+
+#menu-socials img:hover { opacity: 0.5; }
+
+.menu-item {
+    display: block;
+    height: 35px;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 25px;
+    line-height: 35px;
+    color: white;
+
+    background-color: rgba(255,255,255,0.4);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgba(255,255,255,0.6);
+}
+
+.menu-item:hover { background-color: rgba(255,255,255,0.3); }
+
+#menu-lang {
+    font-family: "Open Sans";
+    font-size: 25px;
+    color: white;
+}
+
+.en-switch, .ru-switch {
+    cursor: pointer;
+}
+
+.selected-lang {
+    color: rgb(255, 106, 168);
+}
+
+/*main content*/
+#pennyhomepageart {
+    position: absolute;
+    height: 90%;
+    width: auto;
+    left: 51%;
+    top: 5%;
+
+    animation: fade-in 1.3s, slide 1.5s;
+}
+
+#sidebar {
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
+    height: 545px;
+    width: 580px;
+    padding: 5px;
+    top: 10%;
+    right: 51%;
+    text-align: center;
+
+    animation: fade-in 1.3s, slide 1.5s;
+}
+
+#title-area {
+    height: 150px;
+    margin: 0;
+    line-height: 0;
+    text-align: center;
+}
+
+#logo { 
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    left: 0;
+    vertical-align: top;
+}
+
+#title {
+    display: inline-block;
+    height: 100%;
+    width: 420px;
+    right: 0;
+    margin-top: 25px;
+
+    font-family: "Passion One";
+    font-size: 85px;
+    line-height: 56px;
+    text-align: left;
+    color: white;
+}
+
+#socials {
+    height: 50px;
+    text-align: center;
+    word-spacing: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#socials img {
+    max-height: 45px;
+    max-width: 50px;
+    height: auto;
+    width: auto;
+    vertical-align: middle;
+}
+
+#socials img:hover { opacity: 0.5; }
+
+.sidebar-item {
+    display: block;
+    height: 55px;
+    width: 425px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 37px;
+    line-height: 55px;
+    color: white;
+
+    background-color: rgba(255,255,255,0.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgba(255,255,255,0.6);
+}
+
+.sidebar-item:hover { background-color: rgba(255,255,255,0.3); }
+
+#sidebar-lang {
+    font-family: "Open Sans";
+    font-size: 25px;
+    color: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+#credit {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+
+    font-size: 20px;
+    font-family: "Open Sans";
+    color: white;
+
+    animation: fade-in 2s;
+}
+
+#credit a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/*tablet*/
+@media (max-aspect-ratio: 1/1) {
+    #menu-button {
+        display: initial;
+    }
+
+    #nav-menu {
+        top: 20px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .menu-item {
+        height: 50px;
+        line-height: 50px;
+        font-size: 30px;
+    }
+    #menu-socials {
+        margin-top: -5px;
+        margin-bottom: 15px;
+    }
+    #menu-socials img {
+        max-height: 45px;
+        max-width: 40px;
+    }
+    #menu-lang {
+        font-size: 35px;
+    }
+
+    #page-dim {
+        background-color: rgba(27, 13, 17, 0.8);
+    }
+
+    #pennyhomepageart {
+        left: auto;
+        right: 15%;
+    }
+    #sidebar {
+        visibility: hidden;
+    }
+    #vignette {
+        box-shadow: inset 0 0 3em 6em rgba(255, 217, 226, 0.4);
+    }
+}
+
+/*mobile*/
+@media (max-aspect-ratio: 10/16) {
+    #pennyhomepageart {
+        max-height: 95%;
+        height: auto;
+        width: 95%;
+        left: 2.5%;
+        right: 2.5%;
+        top: auto;
+        bottom: 2%;
+    }
+    #credit {
+        font-size: 15px;
+    }
+    #vignette {
+        box-shadow: inset 0 0 2em 3em rgba(255, 217, 226, 0.4);
+    }
+}
+
+/*skinny mobile*/
+@media (max-aspect-ratio: 8/16) {
+    #pennyhomepageart {
+        bottom: 5%;
+    }
+    
+}
+
+/*ultra skinny*/
+@media (max-width: 300px) {
+    #menu-socials {
+        margin-top: -5px;
+        margin-bottom: 5px;
+        word-spacing: 5px;
+    }
+    #menu-socials img {
+        max-height: 35px;
+        max-width: 30px;
+    }
+    .menu-item {
+        font-size: 25px;
+    }
+
+}
