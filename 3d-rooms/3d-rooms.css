@@ -269,7 +269,7 @@ p {
 }
 
 /*tablet*/
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 1/1) {
     #content { overflow: initial; }
 
     #main-column {
