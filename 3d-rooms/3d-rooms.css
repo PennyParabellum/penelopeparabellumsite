@@ -35,12 +35,11 @@
 /*main content*/
 #content {
     position: absolute;
-    height: 100%;
+    height: auto;
     width: 100%;
     left: 0px;
 
     animation: fade-in 0.8s;
-    overflow: hidden;
 }
 
 #main-column {
@@ -117,7 +116,7 @@ p {
     display: initial;
     position: absolute;
     width: 45%;
-    height: 100%;
+    height: auto;
     left: 40%;
     padding-top: 40px;
 
@@ -126,8 +125,7 @@ p {
 
 #main-image {
     display: inline-block;
-    max-width: 95%;
-    max-height: 50vh;
+    max-height: 45vh;
     margin-top: 4%;
 
     border: solid;
@@ -143,9 +141,9 @@ p {
     position: absolute;
     display: block;
     height: 600px;
-    width: 120%;
-    left: -10%;
-    top: 52%;
+    width: 100%;
+    left: 0%;
+    top: 50vh;
 
     text-align: center;
 
@@ -170,10 +168,11 @@ p {
 #photo1, #photo2, #photo3, #photo4 {
     display: block;
     position: absolute;
-    height: 300px;
-    width: 330px;
-    left: 10px;
-    top: 10px;
+    height: 78%;
+    width: 94%;
+    left: 3%;
+    right: 3%;
+    top: 3%;
     background-color: black;
 
     cursor: pointer;
@@ -204,15 +203,16 @@ p {
 .photo-desc {
     display: block;
     position: absolute;
-    height: 70px;
-    width: 330px;
-    left: 10px;
-    bottom: 10px;
+    height: 14%;
+    width: 94%;
+    left: 3%;
+    right: 3%;
+    bottom: 2%;
 
     text-align: center;
     font-family: "Neucha";
     font-size: 40px;
-    line-height: 70px;
+    line-height: 100%;
     color: #202020;
 }
 
@@ -268,6 +268,36 @@ p {
     box-shadow: 0px 0px 10px black;
 }
 
+@media (max-width: 1500px) {
+    .photo-area {
+        width: 300px;
+        height: 350px;
+    }
+    .photo-desc {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .photo-area {
+        width: 250px;
+        height: 300px;
+    }
+    .photo-desc {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .photo-area {
+        width: 200px;
+        height: 250px;
+    }
+    .photo-desc {
+        font-size: 23px;
+    }
+}
+
 /*tablet*/
 @media (max-aspect-ratio: 1/1) {
     #content { overflow: initial; }
@@ -307,7 +337,11 @@ p {
         animation: none;
     }
 
-    #main-image { border-width: 2px};
+    #main-image { 
+        border-width: 2px;
+        max-height: initial;
+        max-width: 98%;
+    };
 
     .rot-2 { transform: rotateZ(-2deg) translateY(70); }
 
@@ -366,12 +400,23 @@ p {
 
         background-size: 35px;
     }
+
+    .photo-area {
+        width: 300px;
+        height: 350px;
+    }
+    .photo-desc {
+        font-size: 35px;
+    }
 }
 
 /*ultra skinny mobile*/
 @media (max-width: 300px) {
-    #additional-content {
-        margin-top: -180px;
-        transform: scale(0.8) translateX(-30px);
+    .photo-area {
+        width: 250px;
+        height: 300px;
+    }
+    .photo-desc {
+        font-size: 28px;
     }
 }
